@@ -1,0 +1,30 @@
+counter = 0
+total_marks = 0
+marks = 0
+lowest = 0
+highest = 0
+list = 0
+list = int(list)
+while marks != -1:
+        marks = int(input("Enter a mark(or -1 to finish)"))
+        if marks != -1:
+            counter = counter + 1
+        elif marks == -1 or marks < 0 or marks > 100:
+            counter = counter + 0
+        list = list + marks
+        if marks > highest:
+            highest = marks
+        if marks < lowest:
+            lowest = marks
+        if marks == -1:
+            break
+
+average = list / counter
+print("Average: "+average)
+print("Highest: "+highest)
+print("Lowest: "+Lowest)
+
+
+
+
+    
