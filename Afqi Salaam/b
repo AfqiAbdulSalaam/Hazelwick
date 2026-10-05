@@ -1,3 +1,14 @@
-guess = 0
-import random
-number = random.randint(1,100)
+names = ["Apple","Banana","Orange","Mango","Strawberry","Random","Subhan"]
+found = False
+index = 0
+target = input("Enter a name")
+while (index < len(names)) and (found == false):
+    if names[index] == target:
+        found = True
+    else:
+        index += 1
+if found == true:
+     print(target,"found at index",index)
+else:
+    print(target,"not found")
+    
