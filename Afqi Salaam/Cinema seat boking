@@ -1,0 +1,4 @@
+rowNum = 0
+for row in range (1,9):
+    rowNum = rowNum + 1
+    print (\t rowNum)

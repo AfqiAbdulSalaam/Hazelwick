@@ -1,2 +1,36 @@
-print("---Shopping List ---")
-print()
+list = []
+choice = 0
+while choice != "5":
+    print("---Shopping List ---")
+    print("1. Add an item")
+    print("2. Remove an item")
+    print("3. View the list")
+    print("4. Count items")
+    print("5. Quit")
+    choice = int(input("Enter the choice: "))
+    if choice == 1:
+        item = str(input("Item to add: "))
+        if (item in list) == True:
+            print(item," is already in the list")
+        elif (item in list) == False:
+            list.append(item)
+            print(item,"Added")
+    elif choice == 2:
+        option = input("Item to remove")
+        if (option in list) == True:
+            list.remove(option)
+        elif (option in list) == False:
+            print(option," is not in list")
+    elif choice == 3:
+        items = int(len(list))
+        for i in range(items):
+            print(i+1,")",list[i])
+    elif choice == 4:
+        count = len(list)
+        print("There are ",count," items in the list")
+    elif choice == 5:
+        break
+    elif choice > 5 or choice < 1:
+        print("Invalid option, please choose 1-5")
+    elif choice  == 6:
+        sort
