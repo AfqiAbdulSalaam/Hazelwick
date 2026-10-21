@@ -1,0 +1,42 @@
+global num
+num = 0
+global numOfQuestions
+
+def get_in_range(prompt,low,high):
+    numberOfQuestions = input(f"{prompt},"(",{low}," - ","high})
+    return numberOfQuestions
+
+def ask_question(a,b):
+    global right
+    global wrong
+    right = 0
+    wrong = 0
+    for i in range(num):
+        answer = print("What is ",a," x ",b" ?")
+        if answer == a * b:
+            print("Correct!")
+            right = right + 1
+        else:
+            print("Wrong, the answer was ",(a*b),".")
+            wrong = wrong + 1
+
+
+def show_result(score,total):
+    if (score/total) > 0.5:
+        message = "Well Done!"
+    elif (score/total) < 0.5:
+        message = "Keep Practising!"
+    print("You scored",score," out of ",total,message)
+
+def main():
+    num = get_in_range("How many questions?: ",1,10)
+    import random
+
+    for i in range(num):
+        a = random.randint(1,12)
+        b = random.randint(1,12)
+        ask_question(a,b)
+
+    show_result(right,(right + wrong))
+
+main()
