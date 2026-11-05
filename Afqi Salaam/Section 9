@@ -1,0 +1,39 @@
+user = 0
+global total_money
+total_money = 100
+
+def show_balance():
+    global total_money
+    return total_money
+
+def deposit(amount):
+    global total_money
+    if amount <= 0:
+        print("Rejected, try again")
+    elif amount > 0:
+        total_money += amount
+
+def withdraw(amount):
+    global total_money
+    if amount > total_money:
+        print("Insufficient Funds.")
+    elif amount < total_money:
+        total_money = total_money - amount
+
+print("Balance: £",show_balance())
+while user == 0 or user == 1 or user == 2:
+    print("1. Deposit    2. Withdraw     3. Quit")
+    user = int(input("Choose: "))
+    if user == 1:
+        amount = int(input("How much to deposit? "))
+        deposit(amount)
+        print("Balance: £",total_money)
+    elif user == 2:
+        amount = int(input("Enter the amount to withdraw: "))
+        withdraw(amount)
+        print("Balance: £",total_money)
+    elif user == 3:
+        print("Goodbye!")
+        break
+
+
